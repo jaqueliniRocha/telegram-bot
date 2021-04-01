@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'application'
+}
+
+group = 'br.com.telegramBot'
+version = '0.0.1-SNAPSHOT'
+mainClassName = 'br.com.telegramBot.telegrambot.CalendarQuickstart'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile "org.telegram:telegrambots-spring-boot-starter:5.0.1"
+	compile "org.apache.commons:commons-lang3:3.12.0"
+	compile 'com.google.api-client:google-api-client:1.23.0'
+	compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+	compile 'com.google.apis:google-api-services-calendar:v3-rev305-1.23.0'
+}
+
+test {
+	useJUnitPlatform()
+}
